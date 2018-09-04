@@ -15,6 +15,11 @@ GIT_BRANCH="10.0"
 #--------------------------------------------------
 # Update Server
 #--------------------------------------------------
-echo -e "\n---- Update Server ----"
-
+echo -e "\n---- Starting Build Operation ----"
+echo "---------Stop Existing Odoo Service--------------------------------------------------"
+sudo /etc/init.d/odoo-server stop
+sudo /etc/init.d/odoo-server stop
+echo "---------Update Odoo Service--------------------------------------------------"
+/odoo/odoo-server/odoo-bin --config=/etc/odoo-server.conf -d SCCL_LIVE_AWS -u all
 echo "-----------------------------------------------------------"
+
